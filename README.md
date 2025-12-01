@@ -4,7 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Complete-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-**Course:** CS696A - CS 661 – Python Programming  
+**Course:** CS 661 – Python Programming  
 **Institution:** Pace University  
 **Team:** Group 3  
 **Date:** Fall 2025
