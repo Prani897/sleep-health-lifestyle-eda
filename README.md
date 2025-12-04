@@ -26,8 +26,7 @@ This project performs comprehensive Exploratory Data Analysis (EDA) on the Sleep
 ## 📁 Repository Structure
 ```
 sleep-health-lifestyle-eda/
-├── notebooks/
-│   └── Sleep_Health_EDA_Complete.ipynb    # Main analysis notebook
+├── Sleep_Health_EDA_Complete.ipynb    # Main analysis notebook
 ├── data/
 │   ├── sleep_health_dataset.csv           # Original dataset
 │   └── processed datasets                 # Cleaned data
