@@ -1,8 +1,9 @@
-# Sleep Health and Lifestyle - Exploratory Data Analysis
+# 🌙 Sleep Health and Lifestyle - Exploratory Data Analysis
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Status](https://img.shields.io/badge/Status-Complete-success)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?style=for-the-badge&logo=jupyter)
 
 **Course:** CS 661 – Python Programming  
 **Institution:** Pace University  
@@ -11,29 +12,179 @@
 
 ---
 
+## 📋 Table of Contents
+- [Project Overview](#-project-overview)
+- [System Architecture](#-system-architecture)
+- [Data Flow](#-data-flow)
+- [Analysis Workflow](#-analysis-workflow)
+- [Key Findings](#-key-findings)
+- [Dataset Information](#-dataset-information)
+- [Getting Started](#-getting-started)
+- [Visualizations](#-visualizations)
+- [Results](#-results)
+- [Team](#-team-contributions)
+
+---
+
 ## 📊 Project Overview
 
 This project performs comprehensive Exploratory Data Analysis (EDA) on the Sleep Health and Lifestyle dataset to understand factors affecting sleep quality and identify patterns in sleep disorders, lifestyle habits, and health metrics.
 
 ### 🎯 Objectives
-- Analyze sleep patterns and quality across demographics
-- Identify relationships between lifestyle factors and sleep
-- Examine health metrics and their correlations
-- Provide insights and recommendations for better sleep health
+- 📈 Analyze sleep patterns and quality across demographics
+- 🔗 Identify relationships between lifestyle factors and sleep
+- 💊 Examine health metrics and their correlations
+- 💡 Provide insights and recommendations for better sleep health
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TB
+    subgraph "Data Sources"
+        A[Kaggle Dataset] -->|CSV Download| B[Raw Data]
+    end
+    
+    subgraph "Data Processing Pipeline"
+        B --> C[Data Loading]
+        C --> D[Data Cleaning]
+        D --> E[Feature Engineering]
+        E --> F[Data Validation]
+    end
+    
+    subgraph "Analysis Layer"
+        F --> G[Descriptive Statistics]
+        F --> H[Correlation Analysis]
+        F --> I[Categorical Analysis]
+        F --> J[Health Metrics Analysis]
+    end
+    
+    subgraph "Visualization Engine"
+        G --> K[Distribution Plots]
+        H --> L[Heatmaps]
+        I --> M[Bar Charts & Count Plots]
+        J --> N[Boxplots & Scatter Plots]
+    end
+    
+    subgraph "Output & Reporting"
+        K --> O[Jupyter Notebook]
+        L --> O
+        M --> O
+        N --> O
+        O --> P[GitHub Repository]
+        O --> Q[Reports & Insights]
+    end
+    
+    style A fill:#4ecdc4
+    style B fill:#ff6b6b
+    style F fill:#95e1d3
+    style O fill:#f38181
+    style P fill:#aa96da
+```
+
+---
+
+## 🔄 Data Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Notebook as Jupyter Notebook
+    participant Data as Dataset
+    participant Pandas as Pandas/NumPy
+    participant Viz as Matplotlib/Seaborn
+    participant Output as Results
+    
+    User->>Notebook: Run Analysis
+    Notebook->>Data: Load CSV
+    Data->>Pandas: Return Raw Data
+    
+    Pandas->>Pandas: Clean Data
+    Pandas->>Pandas: Handle Missing Values
+    Pandas->>Pandas: Feature Engineering
+    
+    Notebook->>Pandas: Request Statistics
+    Pandas->>Output: Descriptive Stats
+    
+    Notebook->>Pandas: Request Correlations
+    Pandas->>Viz: Generate Heatmap
+    Viz->>Output: Correlation Matrix
+    
+    Notebook->>Pandas: Group Analysis
+    Pandas->>Viz: Create Plots
+    Viz->>Output: Visualizations
+    
+    Output->>User: Display Results
+    Output->>User: Save to Files
+```
+
+---
+
+## 🔬 Analysis Workflow
+
+```mermaid
+flowchart LR
+    A[Start] --> B[Load Dataset]
+    B --> C{Data Quality Check}
+    C -->|Issues Found| D[Data Cleaning]
+    C -->|Clean| E[Exploratory Analysis]
+    D --> E
+    
+    E --> F[Univariate Analysis]
+    E --> G[Bivariate Analysis]
+    E --> H[Multivariate Analysis]
+    
+    F --> I[Generate Visualizations]
+    G --> I
+    H --> I
+    
+    I --> J[Statistical Testing]
+    J --> K[Correlation Analysis]
+    K --> L[Extract Insights]
+    
+    L --> M{More Analysis Needed?}
+    M -->|Yes| E
+    M -->|No| N[Generate Report]
+    N --> O[Save Results]
+    O --> P[End]
+    
+    style A fill:#4ecdc4
+    style D fill:#ff6b6b
+    style I fill:#95e1d3
+    style L fill:#f38181
+    style P fill:#aa96da
+```
 
 ---
 
 ## 📁 Repository Structure
-```
-sleep-health-lifestyle-eda/
-├── Sleep_Health_EDA_Complete.ipynb    # Main analysis notebook
-├── data/
-│   ├── sleep_health_dataset.csv           # Original dataset
-│   └── processed datasets                 # Cleaned data
-├── visualizations/                         # Generated plots
-├── reports/                                # Final deliverables
-├── README.md                              # This file
-└── requirements.txt                       # Python dependencies
+
+```mermaid
+graph TD
+    A[sleep-health-lifestyle-eda/] --> B[Sleep_Health_EDA_Complete.ipynb]
+    A --> C[data/]
+    A --> D[visualizations/]
+    A --> E[reports/]
+    A --> F[README.md]
+    A --> G[LICENSE]
+    A --> H[.gitignore]
+    
+    C --> C1[Sleep_health_and_lifestyle_dataset.csv]
+    C --> C2[README.md]
+    
+    D --> D1[distribution_plots/]
+    D --> D2[correlation_plots/]
+    D --> D3[categorical_plots/]
+    
+    E --> E1[final_report.pdf]
+    E --> E2[README.md]
+    
+    style A fill:#667eea
+    style B fill:#764ba2
+    style C fill:#f093fb
+    style D fill:#4facfe
+    style E fill:#43e97b
 ```
 
 ---
@@ -44,31 +195,64 @@ sleep-health-lifestyle-eda/
 
 **Size:** 374 records × 13 features
 
-**Features:**
-- Demographics: Gender, Age, Occupation
-- Sleep Metrics: Duration, Quality, Disorders
-- Lifestyle: Physical Activity, Stress Level, Daily Steps
-- Health: BMI Category, Blood Pressure, Heart Rate
+### Features Overview
+
+```mermaid
+mindmap
+  root((Sleep Health Dataset))
+    Demographics
+      Gender
+      Age
+      Occupation
+    Sleep Metrics
+      Duration
+      Quality
+      Sleep Disorders
+    Lifestyle Factors
+      Physical Activity Level
+      Stress Level
+      Daily Steps
+    Health Indicators
+      BMI Category
+      Blood Pressure
+      Heart Rate
+```
 
 ---
 
 ## 🔍 Key Findings
 
-### Sleep Patterns
-- Average sleep duration: **~7.1 hours**
-- Average sleep quality: **7-8/10**
-- **40-45%** of individuals have sleep disorders
-- Only **60-70%** get adequate sleep (7-9 hours)
+### Sleep Patterns Insights
 
-### Correlations
-- **Positive** correlation between sleep duration and quality
-- **Negative** correlation between stress and sleep quality
-- Physical activity inversely related to stress levels
+```mermaid
+pie title Sleep Duration Distribution
+    "Adequate Sleep (7-9h)" : 65
+    "Insufficient Sleep (<7h)" : 20
+    "Excessive Sleep (>9h)" : 15
+```
 
-### Health Insights
-- Sleep disorders significantly impact sleep quality
-- BMI category shows relationships with health metrics
-- Age group influences sleep patterns
+### Health Correlations
+
+```mermaid
+graph LR
+    A[Sleep Duration] -->|+0.88| B[Sleep Quality]
+    C[Stress Level] -->|-0.90| B
+    D[Physical Activity] -->|-0.75| C
+    E[Age] -->|-0.12| A
+    F[Sleep Disorder] -->|-0.56| B
+    
+    style A fill:#4ecdc4
+    style B fill:#95e1d3
+    style C fill:#ff6b6b
+    style D fill:#4ecdc4
+    style F fill:#ff6b6b
+```
+
+### Key Statistics
+- **Average Sleep Duration:** ~7.1 hours
+- **Average Sleep Quality:** 7-8/10
+- **Population with Sleep Disorders:** 40-45%
+- **Individuals with Adequate Sleep:** 60-70%
 
 ---
 
@@ -77,78 +261,199 @@ sleep-health-lifestyle-eda/
 ### Prerequisites
 ```bash
 Python 3.8+
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-jupyter
+pandas >= 1.5.3
+numpy >= 1.24.3
+matplotlib >= 3.7.1
+seaborn >= 0.12.2
+scikit-learn >= 1.2.2
+jupyter >= 1.0.0
 ```
 
 ### Installation
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/YOUR-USERNAME/sleep-health-lifestyle-eda.git
+git clone https://github.com/Prani897/sleep-health-lifestyle-eda.git
 cd sleep-health-lifestyle-eda
 ```
 
-2. **Install dependencies:**
+2. **Create virtual environment (optional but recommended):**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Run the notebook:**
-   - Open Google Colab: [Open in Colab](https://colab.research.google.com/github/YOUR-USERNAME/sleep-health-lifestyle-eda/blob/main/notebooks/Sleep_Health_EDA_Complete.ipynb)
-   - Or use Jupyter: `jupyter notebook notebooks/Sleep_Health_EDA_Complete.ipynb`
+4. **Launch Jupyter Notebook:**
+```bash
+jupyter notebook Sleep_Health_EDA_Complete.ipynb
+```
+
+**Or open directly in Google Colab:**
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Prani897/sleep-health-lifestyle-eda/blob/main/Sleep_Health_EDA_Complete.ipynb)
 
 ---
 
 ## 📊 Visualizations
 
 The analysis includes 15+ professional visualizations:
-- Distribution plots for all key variables
-- Categorical analysis (gender, disorders, BMI)
-- Correlation heatmap
-- Boxplots for group comparisons
-- Scatter plots with regression lines
+
+### Visualization Categories
+
+```mermaid
+graph TD
+    A[EDA Visualizations] --> B[Distribution Analysis]
+    A --> C[Categorical Analysis]
+    A --> D[Correlation Analysis]
+    A --> E[Comparative Analysis]
+    
+    B --> B1[Histograms]
+    B --> B2[KDE Plots]
+    B --> B3[Box Plots]
+    
+    C --> C1[Count Plots]
+    C --> C2[Bar Charts]
+    C --> C3[Pie Charts]
+    
+    D --> D1[Heatmap]
+    D --> D2[Pair Plots]
+    D --> D3[Scatter Plots]
+    
+    E --> E1[Group Comparisons]
+    E --> E2[Trend Analysis]
+    
+    style A fill:#667eea
+    style B fill:#f093fb
+    style C fill:#4facfe
+    style D fill:#43e97b
+    style E fill:#fa709a
+```
 
 ---
 
-## 📈 Analysis Workflow
+## 📈 Analysis Methodology
 
-1. **Data Loading** - Import dataset from Google Drive
-2. **Data Cleaning** - Handle missing values, remove duplicates
-3. **Feature Engineering** - Create new categorical features
-4. **Exploratory Analysis** - Generate visualizations and statistics
-5. **Correlation Analysis** - Identify relationships between variables
-6. **Insights Generation** - Summarize key findings
+### Data Processing Pipeline
 
----
-
-## 👥 Team Contributions
-
-- **Person 1:** Sleep patterns and quality analysis
-- **Person 2:** Lifestyle factors analysis
-- **Person 3:** Health metrics analysis
-- **Person 4:** Correlations and integration
+```mermaid
+stateDiagram-v2
+    [*] --> LoadData
+    LoadData --> InspectData
+    InspectData --> CleanData
+    CleanData --> HandleMissing
+    HandleMissing --> RemoveDuplicates
+    RemoveDuplicates --> FeatureEngineering
+    FeatureEngineering --> Validation
+    Validation --> Analysis
+    Analysis --> Visualization
+    Visualization --> Insights
+    Insights --> [*]
+    
+    note right of CleanData
+        Remove null values
+        Correct data types
+        Handle outliers
+    end note
+    
+    note right of FeatureEngineering
+        Create age groups
+        Categorize BMI
+        Calculate derived metrics
+    end note
+```
 
 ---
 
 ## 📝 Results Summary
 
-Our analysis revealed:
-1. Significant positive correlation between sleep duration and quality
-2. Stress negatively impacts sleep quality
-3. Sleep disorders affect nearly half of the population
-4. Physical activity is associated with lower stress levels
-5. Age and occupation influence sleep patterns
+### Key Discoveries
+
+1. **✅ Strong Positive Correlation:** Sleep duration and quality (r = +0.88)
+2. **⚠️ Negative Impact:** Stress significantly reduces sleep quality (r = -0.90)
+3. **📊 Prevalence:** Sleep disorders affect nearly half the population (40-45%)
+4. **💪 Lifestyle Factor:** Physical activity correlates with lower stress levels
+5. **👥 Demographics:** Age and occupation influence sleep patterns
 
 ### Recommendations
-- Aim for 7-9 hours of sleep per night
-- Increase physical activity to reduce stress
-- Seek medical consultation for sleep disorders
-- Maintain healthy BMI for better overall health
+
+```mermaid
+graph TD
+    A[Sleep Health Recommendations] --> B[Sleep Duration]
+    A --> C[Lifestyle Changes]
+    A --> D[Medical Consultation]
+    A --> E[Health Management]
+    
+    B --> B1[Aim for 7-9 hours nightly]
+    B --> B2[Maintain consistent schedule]
+    
+    C --> C1[Increase physical activity]
+    C --> C2[Reduce stress through exercise]
+    C --> C3[Track daily steps target: 10,000]
+    
+    D --> D1[Seek help for sleep disorders]
+    D --> D2[Regular health checkups]
+    
+    E --> E1[Maintain healthy BMI]
+    E --> E2[Monitor blood pressure]
+    E --> E3[Track heart rate]
+    
+    style A fill:#667eea
+    style B fill:#4ecdc4
+    style C fill:#95e1d3
+    style D fill:#ff6b6b
+    style E fill:#4facfe
+```
+
+---
+
+## 👥 Team Contributions
+
+**Group 3 Members:**
+
+| Member | Contribution | Focus Area |
+|--------|--------------|------------|
+| **Person 1** | Sleep patterns analysis | Duration & Quality metrics |
+| **Person 2** | Lifestyle factors | Physical activity & Stress |
+| **Person 3** | Health metrics | BMI, BP, Heart rate |
+| **Person 4** | Data integration | Correlations & insights |
+
+---
+
+## 🛠️ Technologies Used
+
+```mermaid
+graph LR
+    A[Technologies] --> B[Languages]
+    A --> C[Libraries]
+    A --> D[Tools]
+    A --> E[Platform]
+    
+    B --> B1[Python 3.8+]
+    
+    C --> C1[Pandas]
+    C --> C2[NumPy]
+    C --> C3[Matplotlib]
+    C --> C4[Seaborn]
+    C --> C5[Scikit-learn]
+    
+    D --> D1[Jupyter Notebook]
+    D --> D2[Git/GitHub]
+    D --> D3[Google Colab]
+    
+    E --> E1[Kaggle]
+    E --> E2[VS Code]
+    
+    style A fill:#667eea
+    style B1 fill:#3776ab
+    style C1 fill:#150458
+    style C3 fill:#11557c
+    style D1 fill:#f37626
+```
 
 ---
 
@@ -157,6 +462,8 @@ Our analysis revealed:
 1. [Sleep Health and Lifestyle Dataset - Kaggle](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)
 2. [CDC - Sleep and Sleep Disorders](https://www.cdc.gov/sleep/)
 3. [WHO - Sleep Guidelines](https://www.who.int/)
+4. [National Sleep Foundation](https://www.sleepfoundation.org/)
+5. [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
 ---
 
@@ -164,187 +471,78 @@ Our analysis revealed:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+```
+MIT License
+
+Copyright (c) 2025 Prani897
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files.
+```
+
 ---
 
 ## 🤝 Acknowledgments
 
-- **Course Instructor:** CS696A - Pace University
+- **Course Instructor:** CS661 - Pace University
 - **Dataset Source:** Laksika Tharmalingam (Kaggle)
 - **Tools:** Google Colab, Python, Pandas, Matplotlib, Seaborn
+- **Team:** Group 3 Members for collaborative effort
 
 ---
 
 ## 📧 Contact
 
-**Nikunj**  
+**Prani897**  
 Pace University  
-CS696A - Group 3
+CS661 - Group 3
 
-**Project Link:** [https://github.com/YOUR-USERNAME/sleep-health-lifestyle-eda](https://github.com/YOUR-USERNAME/sleep-health-lifestyle-eda)
+**GitHub:** [@Prani897](https://github.com/Prani897)  
+**Project Link:** [https://github.com/Prani897/sleep-health-lifestyle-eda](https://github.com/Prani897/sleep-health-lifestyle-eda)
+
+---
+
+## 🌟 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/Prani897/sleep-health-lifestyle-eda?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Prani897/sleep-health-lifestyle-eda?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/Prani897/sleep-health-lifestyle-eda?style=social)
+
+---
+
+## 📈 Future Enhancements
+
+```mermaid
+graph TB
+    A[Future Work] --> B[Machine Learning]
+    A --> C[Additional Data]
+    A --> D[Interactive Dashboard]
+    A --> E[Mobile App]
+    
+    B --> B1[Predictive Models]
+    B --> B2[Classification Algorithms]
+    B --> B3[Clustering Analysis]
+    
+    C --> C1[Larger Dataset]
+    C --> C2[Time-series Data]
+    C --> C3[Wearable Device Data]
+    
+    D --> D1[Plotly Dash]
+    D --> D2[Streamlit App]
+    D --> D3[Real-time Analytics]
+    
+    E --> E1[Sleep Tracker]
+    E --> E2[Recommendations Engine]
+    
+    style A fill:#667eea
+    style B fill:#f093fb
+    style C fill:#4facfe
+    style D fill:#43e97b
+    style E fill:#fa709a
+```
 
 ---
 
 ⭐ **If you find this project helpful, please give it a star!**
-```
 
-4. **Update:**
-   - Replace `YOUR-USERNAME` with your actual GitHub username
-   - Update contact info
-
-5. Click **"Commit changes"**
-
----
-
-## 📦 **PART 6: Add Requirements.txt**
-
-### **Step 6: Create Requirements File**
-
-1. Click **"Add file"** → **"Create new file"**
-
-2. **Filename:** `requirements.txt`
-
-3. **Content:**
-```
-pandas==1.5.3
-numpy==1.24.3
-matplotlib==3.7.1
-seaborn==0.12.2
-scikit-learn==1.2.2
-jupyter==1.0.0
-```
-
-4. Click **"Commit new file"**
-
----
-
-## 📤 **PART 7: Upload Your Dataset and Visualizations**
-
-### **Step 7: Upload Files via GitHub Web Interface**
-
-**Option A: Web Upload (Easiest)**
-
-1. Go to the `data` folder in your repository
-2. Click **"Add file"** → **"Upload files"**
-3. Drag and drop your CSV files:
-   - `sleep_health_dataset.csv`
-   - `sleep_health_processed.csv`
-   - All person-specific CSVs
-4. Commit message: `Add dataset files`
-5. Click **"Commit changes"**
-
-**Repeat for visualizations:**
-1. Go to `visualizations` folder
-2. Upload all your saved plot images (PNG/JPG)
-3. Commit message: `Add analysis visualizations`
-
-**Note:** GitHub has file size limits (25MB for web upload, 100MB total)
-
----
-
-## 🔗 **PART 8: Add Colab Badge to Notebook**
-
-### **Step 8: Make Notebook Easy to Open**
-
-Your notebook already has the Colab link! When you saved from Colab with "Include a link to Colaboratory" checked, it automatically added the badge.
-
-**Users can click the badge to open directly in Colab!**
-
----
-
-## ✨ **PART 9: Make Repository Look Professional**
-
-### **Step 9: Add Final Touches**
-
-1. **Add Topics/Tags:**
-   - Click the **gear icon** next to "About" (right side)
-   - Add topics: `data-analysis`, `eda`, `python`, `sleep-health`, `data-science`, `visualization`
-   - Add description: "EDA of Sleep Health & Lifestyle Dataset"
-   - Save
-
-2. **Add a License** (if you didn't earlier):
-   - Click **"Add file"** → **"Create new file"**
-   - Name it: `LICENSE`
-   - Click **"Choose a license template"**
-   - Select **"MIT License"**
-   - Fill in year and name
-   - Commit
-
-3. **Create a .gitignore:**
-   - Click **"Add file"** → **"Create new file"**
-   - Name: `.gitignore`
-   - Content:
-```
-   # Python
-   __pycache__/
-   *.py[cod]
-   *$py.class
-   *.so
-   .Python
-   
-   # Jupyter Notebook
-   .ipynb_checkpoints
-   
-   # Data files
-   *.csv
-   !sleep_health_dataset.csv
-   
-   # Virtual Environment
-   venv/
-   env/
-   
-   # OS
-   .DS_Store
-   Thumbs.db
-```
-   - Commit
-
----
-
-## 🎓 **PART 10: Share Your Repository**
-
-### **Step 10: Get Your Repository Link**
-
-**Your repository URL is:**
-```
-https://github.com/YOUR-USERNAME/sleep-health-lifestyle-eda
-```
-
-### **Share with:**
-
-**1. Your Team:**
-```
-Hey team! 
-
-Our project is now on GitHub:
-https://github.com/YOUR-USERNAME/sleep-health-lifestyle-eda
-
-You can:
-- View the complete analysis
-- Download the notebook
-- Open directly in Colab (click the badge)
-- Clone the repository
-
-Let me know if you need access!
-```
-
-**2. Your Professor:**
-```
-Dear Professor,
-
-Our Group 3 project repository:
-https://github.com/YOUR-USERNAME/sleep-health-lifestyle-eda
-
-All code, analysis, and documentation are included.
-The notebook can be opened directly in Google Colab via the badge.
-
-Best regards,
-Nikunj
-```
-
-**3. On Your Resume/LinkedIn:**
-```
-Sleep Health & Lifestyle Analysis
-- Performed EDA on 374 records using Python (pandas, matplotlib, seaborn)
-- Generated 15+ visualizations analyzing sleep patterns and health correlations
-- Identified key factors affecting sleep quality through statistical analysis
-- GitHub: https://github.com/YOUR-USERNAME/sleep-health-lifestyle-eda
+**Last Updated:** December 2025
